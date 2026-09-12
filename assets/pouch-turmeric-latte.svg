@@ -1,0 +1,72 @@
+<svg viewBox="0 0 700 1000" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bgGlow" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#F3E4C7"/>
+      <stop offset="100%" stop-color="#EAD9B4"/>
+    </linearGradient>
+    <linearGradient id="stripeLatte" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#D9A24B"/>
+      <stop offset="100%" stop-color="#C9922E"/>
+    </linearGradient>
+    <linearGradient id="pouchShade" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#EFE4CC"/>
+      <stop offset="55%" stop-color="#FBF6EA"/>
+      <stop offset="100%" stop-color="#E9DCC0"/>
+    </linearGradient>
+    <filter id="soft" x="-30%" y="-30%" width="160%" height="160%">
+      <feDropShadow dx="0" dy="18" stdDeviation="22" flood-color="#3a2a10" flood-opacity="0.22"/>
+    </filter>
+  </defs>
+
+  <rect width="700" height="1000" fill="url(#bgGlow)"/>
+  <ellipse cx="350" cy="900" rx="230" ry="34" fill="#3a2a10" opacity="0.14"/>
+
+  <!-- pouch body -->
+  <g filter="url(#soft)">
+    <path d="M170,150
+             C170,110 190,90 230,86
+             L470,86
+             C510,90 530,110 530,150
+             L536,830
+             C536,868 512,890 470,892
+             L230,892
+             C188,890 164,868 164,830 Z"
+          fill="url(#pouchShade)" stroke="#DCCBA3" stroke-width="2"/>
+    <!-- gusset shadow lines -->
+    <path d="M232,90 C226,300 226,650 234,888" stroke="#DED0AE" stroke-width="2" fill="none" opacity="0.7"/>
+    <path d="M468,90 C474,300 474,650 466,888" stroke="#DED0AE" stroke-width="2" fill="none" opacity="0.7"/>
+    <!-- zip seal top -->
+    <rect x="182" y="118" width="336" height="34" rx="8" fill="#E3D3AC" opacity="0.8"/>
+    <rect x="182" y="118" width="336" height="9" rx="4" fill="#D6C495"/>
+  </g>
+
+  <!-- accent stripe -->
+  <path d="M232,88 C196,92 174,112 172,150 L166,828 C166,866 190,888 230,890 L266,890 L266,88 Z"
+        fill="url(#stripeLatte)"/>
+
+  <!-- veg mark -->
+  <rect x="470" y="176" width="34" height="34" rx="4" fill="none" stroke="#23442B" stroke-width="2.5"/>
+  <circle cx="487" cy="193" r="9" fill="#2D6A4F"/>
+
+  <!-- emblem -->
+  <g transform="translate(350,380)">
+    <circle r="118" fill="#FFFDF7" stroke="#C89A2B" stroke-width="3"/>
+    <circle r="104" fill="none" stroke="#C89A2B" stroke-width="1.4"/>
+    <path id="arcTopLatte" d="M -96 8 A 96 96 0 0 1 96 8" fill="none"/>
+    <text font-family="Georgia, 'Times New Roman', serif" font-size="23" font-weight="700" fill="#23442B" letter-spacing="1">
+      <textPath href="#arcTopLatte" startOffset="50%" text-anchor="middle">GHATS &amp; GOLD</textPath>
+    </text>
+    <!-- sun + mountains glyph -->
+    <circle cx="0" cy="14" r="17" fill="#D9A24B"/>
+    <path d="M-60,44 L-30,4 L-6,30 L18,-14 L60,44 Z" fill="#3F5B3F" opacity="0.9"/>
+    <path d="M-60,44 L-30,4 L-6,30 L18,-14 L60,44" fill="none" stroke="#23442B" stroke-width="1.5" opacity="0.5"/>
+    <!-- milk swirl -->
+    <path d="M-46,66 C-30,54 30,54 46,66" stroke="#F3E4C7" stroke-width="6" fill="none" stroke-linecap="round"/>
+    <path d="M-34,78 C-16,70 16,70 34,78" stroke="#F3E4C7" stroke-width="5" fill="none" stroke-linecap="round" opacity="0.8"/>
+  </g>
+
+  <!-- product name -->
+  <text x="350" y="612" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="40" font-weight="700" fill="#23442B" letter-spacing="1">TURMERIC LATTE</text>
+  <text x="350" y="648" text-anchor="middle" font-family="Arial, sans-serif" font-size="16" letter-spacing="3" fill="#5C5C5C">GOLDEN MILK BLEND</text>
+  <text x="350" y="674" text-anchor="middle" font-family="Arial, sans-serif" font-size="12.5" letter-spacing="2" fill="#9A7221">SINGLE ORIGIN &#183; STONE GROUND</text>
+</svg>

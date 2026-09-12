@@ -216,8 +216,13 @@
   /* ---------- shop page ---------- */
   var pdp = document.getElementById('pdp');
   if (pdp) {
-    var selectedSize = '250g';
-    var PRICES = { '250g': 349, '500g': 649, '1kg': 1199 };
+    var PRODUCT = window.PRODUCT || {
+      id: 'kandhamal-turmeric', name: 'Kandhamal Turmeric', img: 'assets/product-front.jpg',
+      sizes: [{ value: '250g', price: 349 }, { value: '500g', price: 649 }, { value: '1kg', price: 1199 }]
+    };
+    var PRICES = {};
+    PRODUCT.sizes.forEach(function (s) { PRICES[s.value] = s.price; });
+    var selectedSize = PRODUCT.sizes[0].value;
     var priceEl = document.getElementById('pdp-price');
     var updatePrice = function () {
       priceEl.innerHTML = '₹' + PRICES[selectedSize].toLocaleString('en-IN') +
@@ -238,8 +243,8 @@
 
     var addFn = function () {
       window.ggAddToCart({
-        id: 'kandhamal-turmeric', name: 'Kandhamal Turmeric', size: selectedSize,
-        price: PRICES[selectedSize], img: 'assets/product-front.jpg'
+        id: PRODUCT.id, name: PRODUCT.name, size: selectedSize,
+        price: PRICES[selectedSize], img: PRODUCT.img
       });
     };
     document.querySelectorAll('[data-add-to-cart]').forEach(function (b) { b.addEventListener('click', addFn); });
